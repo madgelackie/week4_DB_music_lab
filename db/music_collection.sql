@@ -1,5 +1,5 @@
-DROP TABLE if exists artists;
-DROP TABLE if exists albums;
+DROP TABLE if EXISTS albums;
+DROP TABLE if EXISTS artists;
 
 CREATE TABLE artists (
     id SERIAL PRIMARY KEY,
@@ -10,5 +10,6 @@ CREATE TABLE albums (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     genre VARCHAR(255),
-    year VARCHAR(255)
+    year VARCHAR(255),
+    artist_id INT REFERENCES artists(id)
 );
